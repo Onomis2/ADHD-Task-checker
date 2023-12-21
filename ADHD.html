@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .Condition {
+            margin-bottom: 10px;
+        }
+
+        .Task {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<!--Replace condition 1 and 2 with anything that makes the tasks disappear like weekend or holiday-->
+<!--Replace task 1 through 3 with anything that you want to do when the condition is not met-->
+
+<div class="checkbox-container">
+    <div>
+        <label for="Condition1">condition 1</label>
+        <input type="checkbox" id="Condition1" class="Condition" onclick="toggleTasks('ListOfTasks1')">
+    </div>
+
+    <div id="ListOfTasks1" style="display: none;">
+        <input type="checkbox" id="Task1" class="Task">
+        <label for="Task1">task 1</label>
+        <input type="checkbox" id="Task2" class="Task">
+        <label for="Task2">task 2</label>
+        <input type="checkbox" id="Task3" class="Task">
+        <label for="Task3">task 3</label>
+    </div>
+</div>
+
+<div class="checkbox-container">
+    <div>
+        <label for="Condition2">condition 2</label> <!--Replace condition 2 with anything that makes the tasks disappear like weekend or holiday-->
+        <input type="checkbox" id="Condition2" class="Condition" onclick="toggleTasks('ListOfTasks2')">
+    </div>
+
+    <div id="ListOfTasks2" style="display: none;">
+        <input type="checkbox" id="Task4" class="Task">
+        <label for="Task4">task 1</label>
+        <input type="checkbox" id="Task5" class="Task">
+        <label for="Task5">task 2</label>
+        <input type="checkbox" id="Task6" class="Task">
+        <label for="Task6">task 3</label>
+    </div>
+</div>
+
+<script>
+    function toggleTasks(groupName) {
+        var container = document.getElementById(groupName);
+        container.style.display = container.style.display === 'none' ? 'flex' : 'none';
+    }
+</script>
+
+</body>
+</html>
